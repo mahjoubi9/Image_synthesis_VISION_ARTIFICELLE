@@ -1,0 +1,179 @@
+<!--
+
+
+<div class="h-screen w-screen p-8 bg-gray-100">
+  <div class="bg-white flex p-10 justify-center rounded-2xl shadow-xl">
+    <div class="w-1/2 border-r-2 pr-8">
+      <h2 class="text-xl font-bold">avion Custom Color</h2>
+      <p class="text-sm text-gray-400">avion3</p>
+      <p class="my-5 text-gray-500 text-sm">ggggg.</p>
+      <h3 class="text-sm text-gray-400 tracking-widest">COLOR OPTIONS</h3>
+      <div class="flex mt-4 gap-4">
+        <button class="h-6 w-6 rounded-full shadow-lg cursor-pointer hover:opacity-50 border-2 border-white" [ngClass]="{ 'selected': selectedColor === color }" [style.background-color]="color" *ngFor="let color of colors" (click)="selectedColor = color"></button>
+      </div>
+      &lt;!&ndash;      <button class=" mt-8 w-full shadow-2xl p-4 text-gray-100 bg-black rounded-md">Add to cart</button>&ndash;&gt;
+    </div>
+-->
+
+<div class="engine-wrapper">
+  <!--<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bootstrap 5</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row mt-4 mb-2 text-center">
+      <div class="col">
+        <button type="button" (click)="openFormModal()" class="btn btn-dark">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">AVION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" style="padding:5px;margin:5px;" (click)="add_light()">Add light</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" style="padding:5px;margin:5px;" (click)="rotation()">Rotation animation</a>
+              </li>
+
+              <div  style="width: 250px;height: auto;margin:5px;padding:0px;">
+                <select (change)="objectselected()" [(ngModel)]="objectselectedstring" aria-label="Default select example"
+                        class="form-select" name="miselect" style="  background-color:#ccf7ff;">
+                  <option>tout l'avion</option>
+                  <option >L'aile de l'avion</option>
+                  <optgroup>
+                    <option >L'aile droite de l'avion</option><option >L'aile gauche de l'avion</option>
+                  </optgroup>
+
+                  <option >Moteurs</option>
+                  <optgroup>
+                    <option >Moteur droite</option><option >Moteur gauche</option>
+                  </optgroup>
+                  <option >Roues avion</option>
+                  <optgroup>
+                    <option >Roue droite</option><option >Roue gauche</option>
+                  </optgroup>
+                  <option >Le fuselage</option>
+                  <option >Poste de pilotage</option>
+                  <option >Les empennages d'un avion</option>
+                </select>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <div class="container mt-1" style="background-color:white;position:absolute;width:0px;height:0px;left: 0px;" >
+    <div class="row custom-wrapper">
+      <form >
+        <div  class="d-grid">
+          <select style="background-color:#1c7430;color: white" name="miselect"  [(ngModel)]="objectgroup" multiple="multiple">
+            <option>tout l'avion</option>
+            <option >L'aile de l'avion</option>
+            <optgroup>
+              <option >L'aile droite de l'avion</option><option >L'aile gauche de l'avion</option>
+            </optgroup>
+
+            <option >Moteurs</option>
+            <optgroup>
+              <option >Moteur droite</option><option >Moteur gauche</option>
+            </optgroup>
+            <option >Roues avion</option>
+            <optgroup>
+              <option >Roue droite</option><option >Roue gauche</option>
+            </optgroup>
+            <option >Le fuselage</option>
+            <option >Poste de pilotage</option>
+            <option >Les empennages d'un avion</option>
+
+          </select>
+          <button  class="btn btn-outline-dark"  style="padding:5px;margin:5px;" (click)="objectselectedgroup()" >selection</button>
+          <div *ngIf="string1">
+              <label  *ngFor="let str of string1">{{str}}</label>
+          </div>
+          <img style="white:300px;height:300px;margin:10px;" [src]="img"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div>
+      <canvas #rendererCanvas id="renderCanvas" style="z-index: 998;opacity:1; background-image: url('assets/backround.jpg');"></canvas>
+  </div>
+    </div>
+<!--
+    </div>
+</div>-->
+
+<!--// Example HTML FILE
+<div class="home-component container">
+  &lt;!&ndash; Button trigger modal &ndash;&gt;
+  <button type="button" class="btn btn-primary"
+          (click)="open(demoModal)"
+          data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>-->
+
+  <!-- Modal -->
+ <!-- <div #demoModal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ... this is the model content
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!--form modal-->
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bootstrp Modal</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h3>Hello!</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="saveSomeThing()">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
